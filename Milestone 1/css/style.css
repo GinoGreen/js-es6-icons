@@ -1,7 +1,7 @@
 body {
    font-family: 'Rubik', sans-serif;
 }
-
+/* ///////HEADER////// */
 header {
    
 }
@@ -27,4 +27,44 @@ header {
 .filter_selector select {
    width: 120px;
    margin: 0 20px;
+}
+
+/* ///////MAIN//////  */
+main {
+   height: calc(100vh - 100px);
+
+   background-color: #DDDDDD;
+}
+
+.card_icon {
+   width: 200px;
+   height: 100px;
+
+   margin: 35px 20px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   border-radius: 12px;
+   box-shadow: 2px 2px 10px -5px #000;
+
+   background-color: #fff;
+   cursor: pointer;
+}
+.card_icon i {
+   font-size: 40px;
+}
+i.orange {
+   color: #D19A5E;
+}
+i.green {
+   color: #7BC379;
+}
+i.blue {
+   color: #4D78CC;
+}
+.card_icon span {
+   padding: 7px 0 0;
 }
