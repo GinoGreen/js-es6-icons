@@ -118,6 +118,16 @@ const myContainer = document.getElementById('myContainer');
 
 initIconsDOM();
 
+// creare eventi al click di animal, vegetable, user e anche all
+
+const animal = document.querySelector('[value="2"]');
+const vegetable = document.querySelector('[value="3"]');
+const user = document.querySelector('[value="4"]');
+
+console.log(animal);
+
+animal.addEventListener('click', handleClickAnimal);
+
 //////FUNZIONI//////// 
 
 function initIconsDOM() {
@@ -142,4 +152,11 @@ function getIcon(icon) {
    `;
 
    return iconBox;
+}
+
+function handleClickAnimal(event) {
+
+   myContainer.innerHTML = '';
+
+   console.log(event.target);
 }
