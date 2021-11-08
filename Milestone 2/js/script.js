@@ -120,13 +120,17 @@ initIconsDOM();
 
 // creare eventi al click di animal, vegetable, user e anche all
 
-const animal = document.querySelector('[value="2"]');
-const vegetable = document.querySelector('[value="3"]');
-const user = document.querySelector('[value="4"]');
+const filterSelector = document.querySelector('.form-select');
 
-console.log(animal);
+console.log(filterSelector);
 
-animal.addEventListener('click', handleClickAnimal);
+filterSelector.addEventListener('change', (event) => {
+
+   const value = event.target.value;
+   console.log(value);
+
+   printSelectedIcon(value);
+});
 
 //////FUNZIONI//////// 
 
@@ -154,9 +158,16 @@ function getIcon(icon) {
    return iconBox;
 }
 
-function handleClickAnimal(event) {
-
-   myContainer.innerHTML = '';
-
-   console.log(event.target);
+function printSelectedIcon(value) {
+   
+   if (value === '2') {
+      
+      
+   } else if (value === '3') {
+      
+   } else if (value === '4') {
+      
+   } else {
+      initIconsDOM();
+   }
 }
