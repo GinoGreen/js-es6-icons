@@ -118,7 +118,7 @@ const myContainer = document.getElementById('myContainer');
 
 initIconsDOM();
 
-//////FUNZIONI////////
+//////FUNZIONI//////// 
 
 function initIconsDOM() {
    
