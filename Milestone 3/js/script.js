@@ -134,6 +134,9 @@ filterSelector.addEventListener('change', (event) => {
 
 //////FUNZIONI//////// 
 
+/**
+ * funzione che appende dentro al container tutti gli oggetti dell'array, in formato HTML
+ */
 function initIconsDOM() {
    
    icons.forEach(icon => {
@@ -143,9 +146,14 @@ function initIconsDOM() {
    });
 }
 
+/**
+ * funzione che estrapola le informazione dall'oggetto e le inserisce dentro un divElement
+ * @param {Object} icon 
+ * @returns 
+ */
 function getIcon(icon) {
    
-   const {name, prefix, type, family, color} = icon
+   const {name, prefix, family, color} = icon
 
    const iconBox = document.createElement('div');
    iconBox.className = 'card_icon';
@@ -158,6 +166,10 @@ function getIcon(icon) {
    return iconBox;
 }
 
+/**
+ * funzione che sovrascrive dentro al container gli elementi filtrati in base al valore scelto
+ * @param {String} value 
+ */
 function printSelectedIcon(value) {
    
    myContainer.innerHTML = '';
@@ -166,18 +178,44 @@ function printSelectedIcon(value) {
       
       const animal = icons.filter((icon) => {
          if (icon.type == 'animal') {
-            console.log(icon.type);
+            // console.log(icon.type);
             return true;
          }
          return false;
       });
-      console.log(animal);
+      // console.log(animal);
+      animal.forEach(icon => {
+         myContainer.append(getIcon(icon));
+      })
 
-      myContainer.append(getIcon(animal));
    } else if (value === '3') {
       
+      const vegetable = icons.filter((icon) => {
+         if (icon.type == 'vegetable') {
+            // console.log(icon.type);
+            return true;
+         }
+         return false;
+      });
+      // console.log(vegetable);
+      vegetable.forEach(icon => {
+         myContainer.append(getIcon(icon));
+      })
+
    } else if (value === '4') {
       
+      const user = icons.filter((icon) => {
+         if (icon.type == 'user') {
+            // console.log(icon.type);
+            return true;
+         }
+         return false;
+      });
+      // console.log(user);
+      user.forEach(icon => {
+         myContainer.append(getIcon(icon));
+      });
+
    } else {
       initIconsDOM();
    }
