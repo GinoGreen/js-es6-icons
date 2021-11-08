@@ -112,3 +112,34 @@ const icons = [
 		color: 'blue'
 	}
 ];
+
+// stampare tutte icone dentro al container
+const myContainer = document.getElementById('myContainer');
+
+initIconsDOM();
+
+//////FUNZIONI////////
+
+function initIconsDOM() {
+   
+   icons.forEach(icon => {
+      
+      myContainer.append(getIcon(icon));
+
+   });
+}
+
+function getIcon(icon) {
+   
+   const {name, prefix, type, family, color} = icon
+
+   const iconBox = document.createElement('div');
+   iconBox.className = 'card_icon';
+
+   iconBox.innerHTML = `
+      <i class="${family} ${prefix}${name} ${color}"></i>
+      <span class="caption">${name}</span>
+   `;
+
+   return iconBox;
+}
