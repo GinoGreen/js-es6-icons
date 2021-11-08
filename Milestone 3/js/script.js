@@ -118,6 +118,20 @@ const myContainer = document.getElementById('myContainer');
 
 initIconsDOM();
 
+// creare eventi al click di animal, vegetable, user e anche all
+
+const filterSelector = document.querySelector('.form-select');
+
+console.log(filterSelector);
+
+filterSelector.addEventListener('change', (event) => {
+
+   const value = event.target.value;
+   console.log(value);
+
+   printSelectedIcon(value);
+});
+
 //////FUNZIONI//////// 
 
 function initIconsDOM() {
@@ -142,4 +156,29 @@ function getIcon(icon) {
    `;
 
    return iconBox;
+}
+
+function printSelectedIcon(value) {
+   
+   myContainer.innerHTML = '';
+   console.log('value',);
+   if (value === '2') {
+      
+      const animal = icons.filter((icon) => {
+         if (icon.type == 'animal') {
+            console.log(icon.type);
+            return true;
+         }
+         return false;
+      });
+      console.log(animal);
+
+      myContainer.append(getIcon(animal));
+   } else if (value === '3') {
+      
+   } else if (value === '4') {
+      
+   } else {
+      initIconsDOM();
+   }
 }
